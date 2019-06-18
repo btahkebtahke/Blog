@@ -1,0 +1,30 @@
+﻿@model Blog.Domain.Entities.Article
+
+@{
+    ViewBag.Title = "FullArticle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Blog.WebUI.Helpers
+
+    <section class="lsidebar">
+        <div class="sendform">
+            <label class="bigfont font-weight-bold">@Html.DisplayFor(model => model.Name)</label> <br />
+            <textarea rows="15" cols="75" readonly>@Html.DisplayFor(model => model.Content)</textarea>
+            <p>Дата публикации: @Html.DisplayFor(model => model.Date)</p> <label></label>
+                                                                          <p>Теги:</p>
+            @foreach (var i in Model.Tags)
+            {   
+                <span> @Html.DisplayFor(model => i.Content) </span>
+            }
+        </div>
+    </section>
+<section class="rsidebar d-none d-sm-block">
+    <p class="text-center d-none d-sm-block" style="margin-bottom:0">
+        Mеню
+    </p>
+    <nav class="navbar-collapse collapse d-sm-block d-sm-inline-flex bg-light navbar-light text-center w-100">
+        @Helpers.CreateList(Html)
+    </nav>
+</section>
+

@@ -1,0 +1,34 @@
+﻿@using Blog.WebUI.Helpers
+@{
+    ViewBag.Title = "Анкета";
+}
+
+<section class="lsidebar">
+    <h4 class="text-center">Анкетирование</h4>
+    <form class="p1" action="/Home/Result" method="post">
+        <label>Введите Ваше имя</label> <br />
+        <input type="text" name="Name" value="Денис" /> <br />
+        <label>Ваш любимый цвет?</label> <br />
+        <input type="radio" name="Color" value="красный" /> красный <br />
+        <input type="radio" name="Color" value="синий" /> синий <br />
+        <input type="radio" name="Color" value="зеленый" /> зеленый <br />
+        <input type="radio" name="Color" value="желтый" /> желтый <br />
+        <label>Выберите хобби, которые Вам по душе:</label> <br />
+        <input type="checkbox" name="Hobbies" value="футбол" /> футбол <br />
+        <input type="checkbox" name="Hobbies" value="рисование" /> рисование<br />
+        <input type="checkbox" name="Hobbies" value="теннис" /> теннис<br />
+        <input type="checkbox" name="Hobbies" value="плавание" /> плавание <br />
+        @Html.ValidationMessage("Hobbies","",new { @class = "text-danger" })
+       
+        <p><input type="submit" value="Отправить анкету"></p>
+
+</section>
+<section class="rsidebar d-none d-sm-block">
+    <p class="text-center d-none d-sm-block" style="margin-bottom:0">
+        Menu
+    </p>
+    <nav class="navbar-collapse collapse d-sm-block d-sm-inline-flex bg-light navbar-light text-center w-100">
+        @Helpers.CreateList(Html)
+    </nav>
+
+</section>

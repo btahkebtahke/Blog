@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Blog.Domain.Entities.Questionnaire>
+@{
+    ViewBag.Title = "Результат анкетирования";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Blog.WebUI.Helpers
+
+
+<section class="text-center lsidebar">
+
+    <p>@ViewBag.Name, спасибо, что прошли наше анкетирование!</p>
+    <p>Мы узнали, что Вам нравится @ViewBag.Color цвет,</p>
+    <p>а также Вы увлечены такими хобби:</p>
+    <p>@ViewBag.Hobbies</p>
+
+</section>
+<section class="rsidebar d-none d-sm-block">
+    <p class="text-center d-none d-sm-block" style="margin-bottom:0">
+        Menu
+    </p>
+    <nav class="navbar-collapse collapse d-sm-block d-sm-inline-flex bg-light navbar-light text-center w-100">
+        @Helpers.CreateList(Html)
+    </nav>
+
+</section>

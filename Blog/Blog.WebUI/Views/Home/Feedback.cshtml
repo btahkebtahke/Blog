@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Ваш отзыв";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Blog.WebUI.Helpers
+
+<section class="lsidebar">
+    <form class="sendform" action="/Home/Hello" method="post">
+        <p>Имя автора:</p>
+        <label>@ViewBag.Name</label>
+        <p class="font-weight-light">Текст отзыва:</p> <br />
+        <textarea rows="7" cols="75" readonly>@ViewBag.Text</textarea>
+        <p>Дата отзыва:</p> <label> @ViewBag.Date</label>
+
+    </form>
+</section>
+<section class="rsidebar d-none d-sm-block">
+    <p class="text-center d-none d-sm-block" style="margin-bottom:0">
+        Mеню
+    </p>
+    <nav class="navbar-collapse collapse d-sm-block d-sm-inline-flex bg-light navbar-light text-center w-100">
+        @Helpers.CreateList(Html)
+    </nav>
+
+</section>
+

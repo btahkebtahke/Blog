@@ -1,0 +1,52 @@
+﻿@model Blog.WebUI.Models.ArticlesViewModel
+@{
+    ViewBag.Title = "Главная";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Blog.WebUI.Helpers
+@using Blog.Domain.ActionsWithDB
+
+
+<section class="lsidebar">
+    @foreach (var item in Model.Articles)
+    {
+        if (item.IsDeleted != true)
+        {
+            <form class="superform zindex10" action="/Home/RemoveItemSoftly/@Html.DisplayFor(modelItem => item.ID)" method="post">
+                <div class="position-relative">
+                    <h3>@Html.DisplayFor(modelItem => item.Name)<span class="float-right"><h6>@Html.DisplayFor(modelItem => item.Date)</h6></span></h3>
+                    <p class="p1">@Methods.CutContent(item.Content.ToString())</p>
+                    <p class="p1 p2"><input type="submit" value="Удалить статью"></p>
+                    <span class="p3"> <a class="text-secondary" href="/Home/FullArticle/@Html.DisplayFor(modelItem => item.ID)">Подробнее...</a></span>
+                </div>
+            </form>
+        }
+    }
+    @if (Model.PagingInfo.TotalPages != 1 && Model.PagingInfo.TotalPages != 0)
+    {
+        <div class="text-center">
+           Стр. @Helpers.ShowPages(Html, Model.PagingInfo, x => Url.Action("Index", new { page = x }))
+        </div>
+    }
+    <div class="text-center">
+        <button class="mt-1 progress-bar-success"> <a class="text-secondary" href="/Home/NewArticle">Добавить новую статью</a></button>
+    </div>
+
+</section>
+<section class="rsidebar d-none d-sm-block">
+    <p class="text-center d-none d-sm-block" style="margin-bottom:0">
+        Menu
+    </p>
+    <nav class="navbar-collapse collapse d-sm-block d-sm-inline-flex bg-light navbar-light text-center w-100">
+        @Helpers.CreateList(Html)
+    </nav>
+    <form class="p1 text-center font-italic" action="/Home/Result" method="post">
+        <label>Введите Ваше имя</label> <br />
+        <input type="text" name="Name" value="Денис" /> <br />
+        <label>За кого Вы голосовали?</label> <br />
+        <input type="radio" name="President" value="Зеленский" /> Зеленский <br />
+        <input type="radio" name="President" value="Порошенко" /> Порошенко <br />
+        <input type="radio" name="President" value="Другой кандидат" /> Другой кандидат <br />
+        <input type="radio" name="President" value="Не голосовал" /> Не голосовал <br />
+</section>
+

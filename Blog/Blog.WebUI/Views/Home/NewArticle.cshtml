@@ -1,0 +1,30 @@
+﻿
+@model Blog.Domain.Entities.Article
+@using Blog.WebUI.Helpers
+@{
+    ViewBag.Title = "Добавление статьи";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="lsidebar">
+    <form class="sendform" action="/Home/NewArticle" method="post">
+        @Html.Label("Name", "Введите название статьи")
+        <p><input type="text" name="Name"></p>
+        <p>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })</p>
+        @Html.Label("Content", "Введите текст статьи") <br />
+        <textarea rows="15" cols="100" type="text" name="Content"></textarea>
+        <p>@Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })</p>
+        @Html.Label("Content", "Введите теги, по желанию, через запятую или пробел") <br />
+        <p><input type="text" name="tag.Content" placeholder="Например, 'спорт зима'" ></p>
+        <p>@Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })</p>
+        <p><input type="submit"></p>
+    </form>
+</section>
+<section class="rsidebar d-none d-sm-block">
+    <p class="text-center d-none d-sm-block" style="margin-bottom:0">
+        Menu
+    </p>
+    <nav class="navbar-collapse collapse d-sm-block d-sm-inline-flex bg-light navbar-light text-center w-100">
+        @Helpers.CreateList(Html)
+    </nav>
+</section>
+

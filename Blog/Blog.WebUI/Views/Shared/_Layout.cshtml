@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Блог</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+@using Blog.WebUI.Helpers
+<body>
+    <header class="justify-content-center navbar-fixed-top">
+        <div class="row container h-100">
+            <a name="top"></a>
+            <img class="mylogo" src="~/Images/photo6.jpg" alt="My Logo" />
+            <h3 class="my-auto"> Мой блог </h3>
+            <button class="navbar-toggler w-100 border-light d-sm-none d-lg-none" type="button" data-toggle="collapse" data-target="#supernav" aria-controls="supernav"
+                    aria-expanded="true" aria-label="Toggle navigation">
+                Menu
+            </button>
+
+            <nav id="supernav" class="position-relative zindex100 collapse d-sm-none d-lg-none bg-dark navbar-dark text-center w-100">
+                @Helpers.CreateList(Html)
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="container-fluid body-content">
+        @RenderBody()
+        <hr />
+    </section>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <footer>
+        &copy; @DateTime.Now.Year - Блог Дениса Баланчука <a class="rfooter" href="#top"> На верх страницы</a>
+    </footer>
+</body>
+
+
+</html>

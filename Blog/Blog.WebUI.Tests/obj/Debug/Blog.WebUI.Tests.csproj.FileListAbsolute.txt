@@ -1,0 +1,2 @@
+C:\Users\Компьютер\source\repos\Blog\Blog.WebUI.Tests\obj\Debug\Blog.WebUI.Tests.csprojAssemblyReference.cache
+C:\Users\Компьютер\source\repos\Blog\Blog.WebUI.Tests\obj\Debug\Blog.WebUI.Tests.csproj.CoreCompileInputs.cache

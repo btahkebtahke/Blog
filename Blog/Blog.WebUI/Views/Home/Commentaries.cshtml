@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Blog.Domain.Entities.Commentary>
+
+@{
+    ViewBag.Title = "Гостевая";
+}
+@using Blog.WebUI.Helpers
+    <section class="lsidebar">
+        <h4 class="text-center">Отзывы</h4>
+        @foreach (var item in Model)
+        { 
+
+        <form class="superform2" action="/Home/EditItem/@Html.DisplayFor(modelItem => item.ID)" method="get">
+            <div>
+                <div class="newone">Автор: @Html.DisplayFor(modelItem => item.Name)<span class="float-right"><h6>@Html.DisplayFor(modelItem => item.Date)</h6></span></div>
+                <p class="p1">@Html.DisplayFor(modelItem => item.Content)</p>
+                <p class="p1"><input type="submit" value="Редактировать отзыв"> @Html.ActionLink("Удалить отзыв", "RemoveItemPermanently", new { id = item.ID })</p>
+            </div>
+        </form>
+            
+        
+        }
+    <form class="sendform bg-light" action="/Home/Commentaries" method="post">
+        @Html.Label("name", "Введите ваше имя")
+        <span><input type="text" name="Name"></span> <br />
+        <textarea rows="5" cols="100" type="text" name="Content" placeholder="Напишите что Вы думаете о нас :)"></textarea> <br />
+        @Html.ValidationMessage("Content", "", new { @class = "text-danger" })
+        <p><input type="submit" value="Отправить отзыв"></p>
+
+
+    </form>
+    </section>
+<section class="rsidebar d-none d-sm-block">
+    <p class="text-center d-none d-sm-block" style="margin-bottom:0">
+        Menu
+    </p>
+    <nav class="navbar-collapse collapse d-sm-block d-sm-inline-flex bg-light navbar-light text-center w-100">
+        @Helpers.CreateList(Html)
+    </nav>
+</section>

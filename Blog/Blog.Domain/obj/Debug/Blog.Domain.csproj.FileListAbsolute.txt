@@ -1,0 +1,12 @@
+C:\Users\Компьютер\source\repos\Blog\Blog.Domain\bin\Debug\Blog.Domain.dll.config
+C:\Users\Компьютер\source\repos\Blog\Blog.Domain\bin\Debug\Blog.Domain.dll
+C:\Users\Компьютер\source\repos\Blog\Blog.Domain\bin\Debug\Blog.Domain.pdb
+C:\Users\Компьютер\source\repos\Blog\Blog.Domain\bin\Debug\EntityFramework.dll
+C:\Users\Компьютер\source\repos\Blog\Blog.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Компьютер\source\repos\Blog\Blog.Domain\bin\Debug\EntityFramework.xml
+C:\Users\Компьютер\source\repos\Blog\Blog.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Компьютер\source\repos\Blog\Blog.Domain\obj\Debug\Blog.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Компьютер\source\repos\Blog\Blog.Domain\obj\Debug\Blog.Domain.csproj.CopyComplete
+C:\Users\Компьютер\source\repos\Blog\Blog.Domain\obj\Debug\Blog.Domain.dll
+C:\Users\Компьютер\source\repos\Blog\Blog.Domain\obj\Debug\Blog.Domain.pdb
+C:\Users\Компьютер\source\repos\Blog\Blog.Domain\obj\Debug\Blog.Domain.csprojAssemblyReference.cache
